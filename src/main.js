@@ -17,6 +17,11 @@ Vue.use(directive)
 import WUI from '../packages/index'
 Vue.use(WUI)
 
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+Vue.use(iView);
+
+
 Vue.config.productionTip = false
 Vue.prototype.$http = axios;
 /* eslint-disable no-new */

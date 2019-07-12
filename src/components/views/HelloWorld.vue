@@ -1,9 +1,5 @@
 <template>
-  <div class="hello">
-    <h1>全局sass样式变量：{{msg}}</h1>
-    <h2>{{params}}</h2>
-    <h3>全局过滤方法：{{date|fdate}}</h3>
-    <hr>
+  <div class="content">
     <div class="iconBox">
       <div class="iconItem" v-for="(item, index) in iconList">
         <w-icon :class="item"  :style="{color:RandomColor()}"></w-icon>
@@ -54,7 +50,7 @@ h1{
   color: $themeColor
 }
 .iconBox{
-  width: 80%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
   .iconItem{
@@ -62,6 +58,7 @@ h1{
     width: 120px;
     padding: 10px;
     margin:5px;
+    overflow: hidden;
     float: left;
     i{
       font-size: 24px;

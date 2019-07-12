@@ -6,18 +6,28 @@ export default new Router({
   routes: [
     {
       path: '*',
-      redirect: '/index'
+      redirect: '/HelloWorld'
     },
     {
-      path:'/index',
-      component: resolve => require(['@/components/index.vue'], resolve),
+      path:'/menu',
+      component: resolve => require(['@/components/common/menu.vue'], resolve),
+      children:[
+        {
+          path: '/HelloWorld',
+          component: resolve => require(['@/components/views/HelloWorld'], resolve),
+          meta:{
+              title:'helloWorld'
+          }
+        },
+        {
+          path: '/iviewTable',
+          component: resolve => require(['@/components/views/iviewTable'], resolve),
+          meta:{
+              title:'iview合并表格'
+          }
+        }
+      ]
     },
-    {
-      path: '/HelloWorld',
-      component: resolve => require(['@/components/views/HelloWorld'], resolve),
-      meta:{
-          title:'helloWorld'
-      }
-    }
+
   ]
 })
