@@ -23,9 +23,17 @@ export default new Router({
           path: '/iviewTable',
           component: resolve => require(['@/components/views/iviewTable'], resolve),
           meta:{
-              title:'iview合并表格'
+              title:'iview合并表格(跨行情况)'
           }
         },
+        {
+          path: '/iviewTable1',
+          component: resolve => require(['@/components/views/iviewTable1'], resolve),
+          meta:{
+              title:'iview合并表格(跨行情况)'
+          }
+        },
+
         {
           path: '/iviewTableCount',
           component: resolve => require(['@/components/views/iviewTableCount'], resolve),
