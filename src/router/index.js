@@ -40,6 +40,13 @@ export default new Router({
           meta:{
               title:'iview合并合计'
           }
+        },
+        {
+          path: '/tableInputAndSelect',
+          component: resolve => require(['@/components/views/tableInputAndSelect'], resolve),
+          meta:{
+              title:'iview表格input'
+          }
         }
       ]
     },

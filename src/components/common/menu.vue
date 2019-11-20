@@ -19,7 +19,8 @@
           {name:'一大波图标',path:'helloWorld'},
           {name:'iview合并表格',path:'iviewTable'},
           {name:'iview合并表格1',path:'iviewTable1'},
-          {name:'iview表格合计',path:'iviewTableCount'}
+          {name:'iview表格合计',path:'iviewTableCount'},
+          {name:'表格input和select',path:'tableInputAndSelect'}
         ]
       }
     },
