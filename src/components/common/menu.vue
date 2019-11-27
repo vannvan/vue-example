@@ -8,7 +8,7 @@
         </MenuItem>
       </template>
       <div class="right-action">
-        <Icon :type="fullScreenIcon" size="30" @click="screenfull()"/>
+        <Icon :type="fullScreenIcon" :style='{color:isFullscreen?"#f00":"#000"}' size="30" @click="screenfull()"/>
       </div>
     </Menu>
     <router-view></router-view>
@@ -37,6 +37,14 @@ import screenfull from 'screenfull'
     },
     mounted() {
       //do something after mounting vue instance
+      window.onresize = () => {
+           // 全屏下监控是否按键了ESC
+           // if (this.checkFull()) {
+           //   // 全屏下按键esc后要执行的动作
+           //   this.isFullscreen = false;
+           // }
+           console.log('当前',this.isFullscreen)
+         }
     },
     methods: {
       onRoutes(name){
@@ -62,6 +70,7 @@ import screenfull from 'screenfull'
         if (isFull === undefined) {
             isFull = false;
         }
+        // this.isFullscreen = false
         return isFull;
       }
     }
