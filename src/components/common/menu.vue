@@ -16,7 +16,6 @@
 </template>
 <script type="text/javascript">
 import screenfull from 'screenfull'
-
   export default {
     data() {
       return {
@@ -39,10 +38,10 @@ import screenfull from 'screenfull'
       //do something after mounting vue instance
       window.onresize = () => {
            // 全屏下监控是否按键了ESC
-           // if (this.checkFull()) {
-           //   // 全屏下按键esc后要执行的动作
-           //   this.isFullscreen = false;
-           // }
+           if (!this.checkFull()) {
+             // 全屏下按键esc后要执行的动作
+             this.isFullscreen = false;
+           }
            console.log('当前',this.isFullscreen)
          }
     },
