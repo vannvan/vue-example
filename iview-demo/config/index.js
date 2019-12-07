@@ -9,7 +9,6 @@ var localIP = Ip.getlocalIp()
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -48,6 +47,8 @@ module.exports = {
   },
 
   build: {
+    prodEnv: require('./prod.env'),
+   testEnv: require('./test.env'),
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 

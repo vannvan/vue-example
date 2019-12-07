@@ -1,13 +1,27 @@
-// 开发环境用config下proxyTable的代理地址
-var BASE_URL = '/api';
-var isPro = process.env.NODE_ENV === 'production'
-if(isPro){
-    BASE_URL= 'http://113.113.113.113:8011'  //生产环境下的地址
+/*
+ * 配置编译环境和线上环境之间的切换
+ * baseUrl: 域名地址
+ * routerMode: 路由模式
+ */
+let baseUrl = '';
+let routerMode = 'history';
+let DEBUG = false;
+let cancleHTTP = [];//取消请求头设置；
+//注：下面的baseUrl地址为假地址，只是模拟的，无法调通。
+if (process.env.NODE_ENV == 'development') {
+   baseUrl = "https://10.248.65.100/GetTravelMethod";
+   DEBUG = true;
+}else if(process.env.NODE_ENV == 'production'){
+   baseUrl = "https://10.248.65.200/GetTravelMethod";
+   DEBUG = false;
+}else if(process.env.NODE_ENV == 'testing'){
+   baseUrl = "https://10.248.65.150/GetTravelMethod";
+   DEBUG = false;
 }
 
-const UrlConfig = {
-  getUserInfo:BASE_URL +'user/getinfo',  //获取用户信息
+export{
+   baseUrl,
+   routerMode,
+   DEBUG,
+   cancleHTTP
 }
-export default {
-  UrlConfig
-};

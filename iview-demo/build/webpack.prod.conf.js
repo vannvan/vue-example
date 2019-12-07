@@ -11,7 +11,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const env = require('../config/prod.env')
+// const env = require('../config/prod.env')
+const env = config.build[process.env.env_config+'Env']
+// const env = '"test"'
+// const API_CONFIG = 'http:127.0.1.1:8080'
 
 const  Version = new Date().getTime();  //用时间戳区分版本号
 
@@ -34,14 +37,15 @@ const webpackConfig = merge(baseWebpackConfig, {
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
-      'process.env': env
+      'process.env': env,
+      // 'process.env.NODE_ENV':env
     }),
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: {
           warnings: false,
-          drop_console: true,//console
-          pure_funcs: ['console.log']//移除console
+          // drop_console: true,//console
+          // pure_funcs: ['console.log']//移除console
         }
       },
       sourceMap: config.build.productionSourceMap,

@@ -1,9 +1,7 @@
-import URL_CONFIG from '@/assets/js/urlConfig.js';
 import { formatDate } from '@/assets/js/date.js';
 const mixin = {
      data(){
       return {
-        URL_CONFIG:URL_CONFIG
       }
      },
      filters:{

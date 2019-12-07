@@ -25,6 +25,8 @@ Vue.use(iView);
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css' //这个样式必须引入
 
+const url = require('@/assets/js/urlConfig.js')
+console.log(url)
 
 // 简单配置
 NProgress.inc(0.2)
