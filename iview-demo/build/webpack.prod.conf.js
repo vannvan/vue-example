@@ -11,10 +11,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-// const env = require('../config/prod.env')
-const env = config.build[process.env.env_config+'Env']
-// const env = '"test"'
-// const API_CONFIG = 'http:127.0.1.1:8080'
+const envConfig = require('../config/env.conf')
+
+// const env = envConfig[process.env.env_config]
+const currentEnv = process.argv[2] || 'prod'  //如果命令行没有输入env将按prod进行打包
+
+const env = envConfig[currentEnv]
 
 const  Version = new Date().getTime();  //用时间戳区分版本号
 
