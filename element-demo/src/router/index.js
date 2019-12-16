@@ -18,6 +18,20 @@ export default new Router({
       meta:{
           title:'helloWorld'
       }
+    },
+    {
+      path: '/TimeAxis',
+      component: resolve => require(['@/components/views/TimeAxis'], resolve),
+      meta:{
+          title:'TimeAxis'
+      }
+    },
+    {
+      path: '/TimeAxis1',
+      component: resolve => require(['@/components/views/TimeAxis1'], resolve),
+      meta:{
+          title:'TimeAxis1'
+      }
     }
   ]
 })
