@@ -20,6 +20,11 @@ Vue.use(WUI)
 Vue.config.productionTip = false
 Vue.prototype.$http = axios;
 
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
+Vue.use(ElementUI);
+
 
 /* eslint-disable no-new */
 new Vue({
