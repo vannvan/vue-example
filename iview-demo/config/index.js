@@ -9,6 +9,7 @@ var localIP = Ip.getlocalIp()
 
 module.exports = {
   dev: {
+
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',

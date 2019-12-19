@@ -18,6 +18,13 @@ export default new Router({
       meta:{
           title:'helloWorld'
       }
+    },
+    {
+      path: '/ElementTable',
+      component: resolve => require(['@/components/views/ElementTable'], resolve),
+      meta:{
+          title:'ElementTable'
+      }
     }
   ]
 })
