@@ -17,18 +17,17 @@ Vue.use(directive)
 import WUI from '../packages/index'
 Vue.use(WUI)
 
+import WMessage from '../packages/message/index'
+
+Vue.use(WMessage)
+
 Vue.config.productionTip = false
 Vue.prototype.$http = axios;
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-<<<<<<< HEAD
-Vue.use(ElementUI);
-=======
-
 Vue.use(ElementUI);
 
->>>>>>> ea5e9b11d9526438bc66e9d0b1bdf3d69d09c01f
 
 /* eslint-disable no-new */
 new Vue({
