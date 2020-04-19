@@ -32,6 +32,13 @@ export default new Router({
       meta:{
           title:'TimeAxis1'
       }
+    },
+    {
+      path: '/ElementTable',
+      component: resolve => require(['@/components/views/ElementTable'], resolve),
+      meta:{
+          title:'ElementTable'
+      }
     }
   ]
 })
