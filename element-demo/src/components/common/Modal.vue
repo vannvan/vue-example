@@ -23,6 +23,10 @@ export default {
     value:{
       default:false,
       type:Boolean
+    },
+    render:{
+      defalut:Function,
+      type:null
     }
 
   },
@@ -52,27 +56,26 @@ export default {
 </script>
 
 <style lang="scss">
-.modal{
+.modal {
   width: 300px;
   height: auto;
   background: #ccc;
-  margin:0 auto;
-  .title{
+  margin: 0 auto;
+  .title {
     height: 40px;
     width: 100%;
     background: #f6f6f6;
     text-align: center;
     line-height: 40px;
   }
-  .body{
+  .body {
     width: 100%;
     height: 150px;
     text-align: center;
   }
-  .footer{
+  .footer {
     height: 40px;
     width: 100%;
-
   }
 }
 </style>

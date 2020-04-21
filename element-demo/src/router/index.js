@@ -39,6 +39,14 @@ export default new Router({
       meta:{
           title:'ElementTable'
       }
-    }
+    },
+    {
+      path: '/RenderDemo',
+      component: resolve => require(['@/components/views/RenderDemo'], resolve),
+      meta:{
+          title:'RenderDemo'
+      }
+    },
+    
   ]
 })

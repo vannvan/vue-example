@@ -54,7 +54,7 @@ const MESSAGE = {
       //     newMessage.$destroy()
       //     vm = null
       //     callback && (typeof callback === 'function') && callback()
-      //
+      
       //   },MESSAGE.animateTime)
       // },duration)
     }
