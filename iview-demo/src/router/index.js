@@ -47,6 +47,13 @@ export default new Router({
           meta:{
               title:'iview表格input'
           }
+        },
+        {
+          path: '/JsxTable',
+          component: resolve => require(['@/components/views/JsxTable'], resolve),
+          meta:{
+              title:'JSX表格'
+          }
         }
       ]
     },
