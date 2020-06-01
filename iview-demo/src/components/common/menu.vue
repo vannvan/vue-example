@@ -8,12 +8,7 @@
         </MenuItem>
       </template>
       <div class="right-action">
-        <Icon
-          :type="fullScreenIcon"
-          :style="{color:isFullscreen?"#f00":"#000"}"
-          size="30"
-          @click="screenfull()"
-        />
+        <Icon :type="fullScreenIcon" size="30" @click="screenfull()" />
       </div>
     </Menu>
     <router-view></router-view>
@@ -30,7 +25,7 @@ export default {
         { name: "iview合并表格1", path: "iviewTable1" },
         { name: "iview表格合计", path: "iviewTableCount" },
         { name: "表格input和select", path: "tableInputAndSelect" },
-        { name: "JSX表格", path: "JsxTable" }
+        { name: "JSX表格", path: "JsxTable" },
       ],
       isFullscreen: false
     };
