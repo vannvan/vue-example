@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-table
+    <!-- <el-table
       ref="multipleTable"
       :data="tableData"
       tooltip-effect="dark"
@@ -18,7 +18,8 @@
     <div style="margin-top: 20px">
       <el-button @click="toggleSelection([tableData[1], tableData[2]])">切换第二、第三行的选中状态</el-button>
       <el-button @click="toggleSelection()">取消选择</el-button>
-    </div>
+    </div> -->
+    <el-input v-model="value1" placeholder="请输入内容" type="number" v-Int='{"limit":720}'   ></el-input>
   </div>
 </template>
 
@@ -63,9 +64,14 @@ export default {
           address: "上海市普陀区金沙江路 1518 弄"
         }
       ],
-      multipleSelection: []
+      multipleSelection: [],
+      value1:0,
+      limitNum:1000
     };
   },
+  
+ 
+
   watch: {
     multipleSelection: {
       handler(newData, oldData) {
@@ -73,10 +79,17 @@ export default {
             //
         }
       }
+    },
+    
+  },
+  computed:{
+    expression() {
+      return `if(value>${this.limitNum})value=value.substr(0,3);if(value<0)value=0;value=value.replace(/^[0]/,'')`
     }
   },
 
   methods: {
+    
     toggleSelection(rows) {
       if (rows) {
         rows.forEach(row => {
@@ -85,6 +98,20 @@ export default {
       } else {
         this.$refs.multipleTable.clearSelection();
       }
+    },
+    initNum(val,e) {
+    
+      console.log(val,'--',e.target);
+      let value = e.target.value
+      
+  
+      var reg = /^\d+(\.\d+)?$/; 
+      if(!reg.test(value)) {
+        console.log('不是数字');
+      }
+    },
+    change(e) {
+      console.log(e);
     },
     handleSelectionChange(val) {
       this.multipleSelection = val;
