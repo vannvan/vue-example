@@ -1,22 +1,25 @@
-// vue.config.js
-
 const VueSSRServerPlugin = require("vue-server-renderer/server-plugin");
 const VueSSRClientPlugin = require("vue-server-renderer/client-plugin");
 const nodeExternals = require("webpack-node-externals");
 const merge = require("lodash.merge");
 const TARGET_NODE = process.env.WEBPACK_TARGET === "node";
 const target = TARGET_NODE ? "server" : "client";
-
-
 module.exports = {
+    devServer: {
+        open: true,
+        host: "127.0.0.1",
+        port: 8089,
+        historyApiFallback: true,
+        headers: { "Access-Control-Allow-Origin": "*" }
+    },
     css: {
-        extract: process.env.NODE_ENV === 'production'
+        extract: process.env.NODE_ENV === "production"
     },
     configureWebpack: () => ({
         // 将 entry 指向应用程序的 server / client 文件
         entry: `./src/entry-${target}.js`,
         // 对 bundle renderer 提供 source map 支持
-        devtool: 'source-map',
+        devtool: "source-map",
         target: TARGET_NODE ? "node" : "web",
         node: TARGET_NODE ? undefined : false,
         output: {
@@ -43,7 +46,7 @@ module.exports = {
             .rule("vue")
             .use("vue-loader")
             .tap(options => {
-                merge(options, {
+                return merge(options, {
                     optimizeSSR: false
                 });
             });

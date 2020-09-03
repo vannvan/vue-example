@@ -1,21 +1,20 @@
 const fs = require("fs");
-const Koa = require("koa");
 const path = require("path");
-const koaStatic = require('koa-static')
-const app = new Koa();
+const Router = require('koa-router')
+const send = require('koa-send')
+const router = new Router()
 
 const resolve = file => path.resolve(__dirname, file);
-// 开放dist目录
-app.use(koaStatic(resolve('./dist')))
+
 
 // 第 2 步：获得一个createBundleRenderer
 const { createBundleRenderer } = require("vue-server-renderer");
-const bundle = require("./dist/vue-ssr-server-bundle.json");
-const clientManifest = require("./dist/vue-ssr-client-manifest.json");
+const bundle = require("../dist/vue-ssr-server-bundle.json");
+const clientManifest = require("../dist/vue-ssr-client-manifest.json");
 
 const renderer = createBundleRenderer(bundle, {
     runInNewContext: false,
-    template: fs.readFileSync(resolve("./src/index.temp.html"), "utf-8"),
+    template: fs.readFileSync(resolve("../src/index.temp.html"), "utf-8"),
     clientManifest: clientManifest
 });
 
@@ -26,18 +25,25 @@ function renderToString(context) {
         });
     });
 }
+
 // 第 3 步：添加一个中间件来处理所有请求
-app.use(async (ctx, next) => {
+const handleRequest = async (ctx, next) => {
+
+    const url = ctx.path
+    console.log(url)
+    if (url.includes('.')) {
+        console.log(`proxy ${url}`)
+        return await send(ctx, url, { root: path.resolve(__dirname, '../dist') })
+    }
+
+    ctx.res.setHeader("Content-Type", "text/html");
     const context = {
         title: "ssr test",
-        url: ctx.url
+        url
     };
     // 将 context 数据渲染为 HTML
     const html = await renderToString(context);
     ctx.body = html;
-});
-
-const port = 3000;
-app.listen(port, function() {
-    console.log(`server started at localhost:${port}`);
-});
+}
+router.get('*', handleRequest)
+module.exports = router
