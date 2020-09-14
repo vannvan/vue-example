@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button>按钮</button>
+    <button :class="['btn'+ ' btn-'+type]">按钮</button>
   </div>
 </template>
 
@@ -8,13 +8,19 @@
 import { Prop, onUnmounted } from "vue";
 export default {
   props: {
-    type: String,
+    type: {
+      type: String,
+    },
   },
   setup(props) {
-    console.log("props", props.name);
+    console.log("props", props);
   },
 };
 </script>
 
-<style>
+<style lang="scss">
+.btn {
+  padding: 0 8px;
+  border: none;
+}
 </style>

@@ -24,20 +24,37 @@
         </li>
       </ul>
       <h1>{{state.owner}}</h1>
-      <Button :type="primary"></Button>
+      <button @click="goHome()">goHome方法</button>
+      <Button type="primary"></Button>
     </div>
   </div>
 </template>
 <script lang="ts">
 // 在vue2中 data 在vue3中使用 reactive代替
 import { reactive, computed, ref, watch, watchEffect } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter, onBeforeRouteLeave } from "vue-router";
 import Button from "../components/Button.vue";
 export default {
+  components: {
+    Button,
+  },
   // setup相当于vue2.0的 beforeCreate和 created，是vue3新增的一个属性，所有的操作都在此属性中完成
   setup(props, context) {
     // 通过reactive 可以初始化一个可响应的数据，与Vue2.0中的Vue.observer很相似
     const name = ref("john");
+    //获取当前路由
+    const route = useRoute();
+    console.log("route", route.path);
+    //获取路由实例
+    const router = useRouter();
+
+    // 路由跳转
+    function goHome() {
+      router.push({
+        path: "/home",
+      });
+    }
+
     const id = ref(0);
     const state = reactive({
       owner: {
@@ -114,9 +131,11 @@ export default {
       });
       state.todo = "";
     };
-    components: {
-      Button;
-    }
+
+    onBeforeRouteLeave(() => {
+      console.log("当当前页面路由离开的时候调用");
+    });
+
     // 在Vue3.0中，所有的数据和方法都通过在setup 中 return 出去，然后在template中使用
     return {
       state,
@@ -124,6 +143,7 @@ export default {
       dones,
       handleChangeStatus,
       handleAddTodo,
+      goHome,
     };
   },
 };
