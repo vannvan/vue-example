@@ -1,0 +1,14 @@
+{
+  "name": "program",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vannvan <adowrww@gmail.com> (https://github.com/vannvan)",
+  "license": "MIT",
+  "dependencies": {
+    "miniprogram-datepicker": "^0.3.0"
+  }
+}
