@@ -8,7 +8,7 @@
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx;
+  /* margin: 20rpx; */
   border-radius: 50%;
 }
 
@@ -17,5 +17,11 @@
 }
 
 .usermotto {
-  margin-top: 200px;
+  margin-top: 60px;
+}
+
+.progress-box{
+  height: 30rpx;
+  width: 90%;
+  margin:10rpx auto
 }

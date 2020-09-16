@@ -60,7 +60,7 @@ export default {
       owner: {
         name: "啵啵",
         age: 22,
-        gander: 1,
+        gender: 1,
       },
       todoList: [
         {

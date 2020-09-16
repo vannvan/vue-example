@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+  
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -10,7 +11,26 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <view class="progress-box" >
+      <progress percent="20" show-info stroke-width="3"/>
+  </view>
   <view class="btn-area">  
-   <navigator url="/pages/test/test" hover-class="navigator-hover">跳转test页面</navigator>  
+    <!-- <button type="primary" url="/pages/test/test">页面主操作</button> -->
+     <navigator url="/pages/test/test" hover-class="navigator-hover">跳转test页面</navigator>  
  </view>  
+ <view class="btn-area">
+  <w-button inner-text="Some text" bindmyevent="onMyEvent"></w-button>
+ </view>
+ for循环
+ <view wx:for="{{userList}}">
+  {{item.name}} : {{item.age}}
+</view>
+条件渲染
+<view wx:if="{{length>5}}">1</view>
+<view wx:elif="{{length>2}}">2</view>
+<view wx:else>3</view>
+
+<icon class="icon-box-img" type="success" size="93"></icon>
+
+
 </view>

@@ -7,12 +7,12 @@ export default createRouter({
   // 路由地址
   routes: [
     {
-      redirect: 'home',
-      path: '/ ',
+      redirect: '/home',
+      name: 'home',
+      path: '/',
     },
     {
       path: '/todolist',
-      // 必须添加.vue后缀
       component: () => import('../views/TodoList.vue'),
     },
     {

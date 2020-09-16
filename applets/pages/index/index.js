@@ -6,8 +6,13 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
+    userList:[
+      {name:'bob',age:11},
+      {name:'smith',age:23}
+    ],
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    length:7
   },
   //事件处理函数
   bindViewTap: function() {
@@ -15,7 +20,18 @@ Page({
       url: '../logs/logs'
     })
   },
+  observers:{
+    'motto':function(val) {
+      console.log(val)
+    }
+  },
   onLoad: function () {
+    setTimeout(() => {
+      this.setData({
+        motto:'hello呀world'
+      })
+    }, 3000);
+   
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -50,5 +66,9 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  onMyEvent:function(e) {
+    console.log(e)
   }
 })

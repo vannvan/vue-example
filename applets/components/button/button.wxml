@@ -1,0 +1,4 @@
+<view class="inner">
+  <button  bindtap="handleClick"> {{innerText}}触发事件</button>
+</view>
+<slot></slot>
