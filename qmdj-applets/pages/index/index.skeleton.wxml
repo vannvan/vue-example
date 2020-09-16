@@ -1,0 +1,88 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/9/16 下午6:36:36 
+使用方法：
+在 D:\vannvan@github\vue-example\qmdj-applets\pages\index\index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 D:\vannvan@github\vue-example\qmdj-applets\pages\index\index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container">
+      <view class="swiper-wrap">
+        <swiper autoplay="true" circular="true" duration="1000" indicator-dots="true" interval="3000" style="height:100%" current="0" current-item-id="true">
+          <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+            <view class="swiper-item">
+              <image style="width:100%;" class="sk-image"></image>
+            </view>
+          </swiper-item>
+          <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(-100%, 0px) translateZ(0px);">
+            <view class="swiper-item">
+              <image style="width:100%;" class="sk-image"></image>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view>
+      <view class="nav-wrap">
+        <view class="nav-item" data-link="undefined">
+          <image class="sk-image"></image>
+          <p class="sk-transparent sk-text-14-2857-387 sk-text" style="background-position-x: 50%;">课程管理</p>
+        </view>
+        <view class="nav-item" data-link="undefined">
+          <image class="sk-image"></image>
+          <p class="sk-transparent sk-text-14-2857-631 sk-text" style="background-position-x: 50%;">会员中心</p>
+        </view>
+        <view class="nav-item" data-link="undefined">
+          <image class="sk-image"></image>
+          <p class="sk-transparent sk-text-14-2857-100 sk-text" style="background-position-x: 50%;">合伙人</p>
+        </view>
+        <view class="nav-item" data-link="/pages/user/user">
+          <image class="sk-image"></image>
+          <p class="sk-transparent sk-text-14-2857-831 sk-text" style="background-position-x: 50%;">个人中心</p>
+        </view>
+      </view>
+      <view class="recommend-wrap">
+        <text class="title sk-transparent sk-text-14-2857-543 sk-text sk-pseudo sk-pseudo-circle" style="background-position-x: 50%;">推荐课程</text>
+        <view class="course-list">
+          <view class="course-item" data-id="0">
+            <image class="sk-image"></image>
+            <p class="course-name sk-transparent sk-text-14-2857-896 sk-text">课程名称,课程名称课程名称课程名称课程名称</p>
+            <p class="course-price sk-transparent sk-text-14-2857-919 sk-text">88.88</p>
+          </view>
+          <view class="course-item" data-id="1">
+            <image class="sk-image"></image>
+            <p class="course-name sk-transparent sk-text-14-2857-374 sk-text">课程名称,课程名称课程名称课程名称课程名称</p>
+            <p class="course-price sk-transparent sk-text-14-2857-200 sk-text">88.88</p>
+          </view>
+          <view class="course-item" data-id="2">
+            <image class="sk-image"></image>
+            <p class="course-name sk-transparent sk-text-14-2857-734 sk-text">课程名称,课程名称课程名称课程名称课程名称</p>
+            <p class="course-price sk-transparent sk-text-14-2857-404 sk-text">88.88</p>
+          </view>
+          <view class="course-item" data-id="3">
+            <image class="sk-image"></image>
+            <p class="course-name sk-transparent sk-text-14-2857-391 sk-text">课程名称,课程名称课程名称课程名称课程名称</p>
+            <p class="course-price sk-transparent sk-text-14-2857-168 sk-text">88.88</p>
+          </view>
+          <view class="course-item" data-id="4">
+            <image class="sk-image"></image>
+            <p class="course-name sk-transparent sk-text-14-2857-620 sk-text">课程名称,课程名称课程名称课程名称课程名称</p>
+          </view>
+          <view class="course-item" data-id="5">
+            <image class="sk-image"></image>
+            <p class="course-name sk-transparent sk-text-14-2857-866 sk-text">课程名称,课程名称课程名称课程名称课程名称</p>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

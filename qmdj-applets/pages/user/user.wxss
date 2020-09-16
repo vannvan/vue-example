@@ -1,0 +1,95 @@
+@import '../../css/style.wxss';
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80rpx;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.mine-wrap {
+  width: 100%;
+  padding: 0 2%;
+  box-sizing: border-box;
+  margin-top: 15rpx;
+  background: #fff;
+  display: table;
+}
+
+.mine-wrap .info-item {
+  height: 180rpx;
+  width: 48%;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.mine-wrap .info-item:first-child::after {
+  content: '';
+  position: absolute;
+  width: 2rpx;
+  height: 120rpx;
+  display: block;
+  background: #ededed;
+  top: 35rpx;
+  right: -1rpx
+}
+
+.mine-wrap .info-item p {
+  display: block;
+  width: 100%;
+  line-height: 70rpx;
+}
+
+.mine-wrap .info-item .title {
+  font-weight: bolder;
+  /* line-height: 100rpx; */
+}
+
+
+
+.action-list {
+  height: auto;
+  width: 100%;
+  background: #fff;
+  margin-top: 15rpx
+}
+
+.action-list .action-item {
+  height: 80rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #ccc;
+  line-height: 80rpx;
+  padding: 0 15rpx;
+  position: relative;
+}
+
+.action-list .action-item image {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+
+.action-list .action-item .arrow-right {
+  display: block;
+  position: absolute;
+  width: 32rpx;
+  height: 32rpx;
+  right: 48rpx;
+  top: 28rpx
+}

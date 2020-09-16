@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<import src="index.skeleton.wxml" />
+<view class="container">
+  <template is="skeleton" wx-if="{{loading}}" :data="{{hideBanner}}" />
+  <view class="swiper-wrap" hidden="{{!hideBanner}}">
+    <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000" circular="true" style="height:100%">
+      <block wx:for="{{swiperList}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{item}}" style="width:100%;"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="nav-wrap">
+    <view wx:for="{{navList}}" class="nav-item" wx:key="*this" bindtap="handleRedirect" data-link="{{item.link}}">
+      <image src="../../images/nav-icon.png"></image>
+      <p>{{item.name}}</p>
+    </view>
+  </view>
+  <view class="recommend-wrap">
+    <text class="title">推荐课程</text>
+    <view class="course-list">
+      <view class="course-item" wx:for="{{[1,2,3,4,5,6]}}" bindtap="handleGotoCourseInfo" wx:key="*this"
+        data-id="{{index}}">
+        <image src="../../images/course.png"></image>
+        <p class="course-name">课程名称,课程名称课程名称课程名称课程名称</p>
+        <p class="course-price">88.88</p>
+      </view>
+    </view>
+  </view>
+</view>

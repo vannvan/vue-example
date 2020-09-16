@@ -1,0 +1,94 @@
+/**index.wxss**/
+@import '../../css/style.wxss';
+@import './index.skeleton.wxss';
+
+.swiper-wrap {
+  height: 290rpx;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.nav-wrap {
+  height: 200rpx;
+  width: 100%;
+  padding: 0 5%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.nav-item {
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
+  background: #ededed;
+  border-radius: 5rpx;
+  text-align: center;
+}
+
+.nav-item image {
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.nav-item p {
+  font-size: 22rpx;
+}
+
+.recommend-wrap {
+  margin-top: 15rpx;
+  width: 100%;
+  min-height: 500rpx;
+  background: #fff;
+}
+
+.recommend-wrap .title {
+  text-align: center;
+  display: block;
+  margin-top: 15rpx
+}
+
+.recommend-wrap .title::before,
+.recommend-wrap .title::after {
+  content: ' / ';
+  font-weight: bolder;
+  color: #ccc;
+}
+
+.course-list {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 25rpx auto auto auto;
+}
+
+.course-list .course-item {
+  width: 48%;
+  height: auto;
+  box-shadow: 0 0 10rpx #ccc;
+  margin-bottom: 30rpx;
+  border-radius: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.course-list .course-item image {
+  width: 100%;
+  height: 180rpx;
+  border-radius: 10rpx 10rpx 0 0;
+}
+
+.course-list .course-item .course-name {
+  font-size: 26rpx;
+  display: block;
+  margin-left: 15rpx;
+}
+
+.course-list .course-item .course-price {
+  color: #f00;
+  font-size: 22rpx;
+  margin-left: 15rpx;
+}
