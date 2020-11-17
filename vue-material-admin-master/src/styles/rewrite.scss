@@ -1,0 +1,14 @@
+.v-navigation-drawer__content {
+    // overflow-y: hidden !important;
+    scrollbar-width: none;
+
+    .app-drawer__inner {
+        overflow: hidden;
+    }
+
+    /* Firefox */
+}
+
+.v-navigation-drawer__content::-webkit-scrollbar {
+    display: none
+}

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button :class="['btn'+ ' btn-'+type]">按钮</button>
+    <button :class="['btn' + ' btn-' + type]">按钮</button>
   </div>
 </template>
 
