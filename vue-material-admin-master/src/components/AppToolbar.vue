@@ -166,7 +166,7 @@ export default {
     handleLogut() {
       if (window.confirm('Are you sure to logout?')) {
         this.$store.dispatch('logout')
-        window._VMA.$emit('SHOW_SNACKBAR', {
+        window._VV.$emit('SHOW_SNACKBAR', {
           text: 'Logout successfull',
           color: 'success'
         })

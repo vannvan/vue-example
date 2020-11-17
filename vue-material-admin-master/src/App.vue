@@ -68,8 +68,8 @@ export default {
     }
   },
   mounted() {
-    if (typeof window !== undefined && window._VMA === undefined) {
-      window._VMA = this
+    if (typeof window !== undefined && window._VV === undefined) {
+      window._VV = this
     }
   },
   created() {

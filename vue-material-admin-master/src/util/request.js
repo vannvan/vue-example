@@ -16,7 +16,7 @@ const err = (error) => {
     }
     switch (status) {
         case 400:
-            window._VMA.$emit('SHOW_SNACKBAR', {
+            window._VV.$emit('SHOW_SNACKBAR', {
                 show: true,
                 text: 'Bad Request ' + data.message,
                 color: 'red'
@@ -24,7 +24,7 @@ const err = (error) => {
             break
 
         case 422:
-            window._VMA.$emit('SHOW_SNACKBAR', {
+            window._VV.$emit('SHOW_SNACKBAR', {
                 show: true,
                 text: message,
                 color: 'red'
@@ -33,14 +33,14 @@ const err = (error) => {
             break
 
         case 401:
-            window._VMA.$emit('AUTH_FAIELD')
+            window._VV.$emit('AUTH_FAIELD')
             break
 
         case 403:
-            window._VMA.$emit('ACESS_DENIED')
+            window._VV.$emit('ACESS_DENIED')
             break
         case 500:
-            window._VMA.$emit('SERVER_ERROR')
+            window._VV.$emit('SERVER_ERROR')
             break
 
         default:
@@ -64,13 +64,13 @@ service.interceptors.request.use((config) => {
 
 service.interceptors.response.use(({ data, config }) => {
     if (['put', 'post', 'delete', 'patch'].includes(config.method) && data.meta) {
-        window._VMA.$emit('SHOW_SNACKBAR', {
+        window._VV.$emit('SHOW_SNACKBAR', {
             text: data.meta.message,
             color: 'success'
         })
     }
     if (data.code !== undefined) {
-        window._VMA.$emit('API_FAILED', { msg: data.message })
+        window._VV.$emit('API_FAILED', { msg: data.message })
     }
 
     return data
