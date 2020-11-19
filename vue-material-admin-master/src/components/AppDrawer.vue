@@ -187,12 +187,12 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.app-drawer
-    overflow: hidden !important
-&__inner
-    height: calc(100vh - 48px)
-    overflow-y: scroll
-.drawer-menu--scroll
-    height: calc(100vh - 48px)
-    overflow: auto
+// .app-drawer
+//     overflow: hidden !important
+// &__inner
+//     height: calc(100vh - 48px)
+//     overflow-y: scroll
+// .drawer-menu--scroll
+//     height: calc(100vh - 48px)
+//     overflow: auto
 </style>

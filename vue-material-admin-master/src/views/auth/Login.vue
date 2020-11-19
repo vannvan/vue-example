@@ -28,13 +28,13 @@
                 append-icon="mdi-email"
                 autocomplete="off"
                 name="login"
-                :label="$vuetify.lang.t('$vuetify.username')"
-                :placeholder="$vuetify.lang.t('$vuetify.username')"
+                :label="$vuetify.lang.t('$vuetify.mobile')"
+                :placeholder="$vuetify.lang.t('$vuetify.mobile')"
                 type="text"
                 required
                 outlined
-                :rules="formRule.username"
-                v-model="formModel.username"
+                :rules="formRule.mobile"
+                v-model="formModel.mobile"
               />
               <v-text-field
                 append-icon="mdi-lock"
@@ -81,46 +81,55 @@
 </template>
 
 <script>
+// import { validationMixin } from 'vuelidate'
+// import { required, maxLength, email } from 'vuelidate/lib/validators'
 export default {
+  //   mixins: [validationMixin],
   name: 'PageLogin',
   data() {
     return {
       loading: false,
       formValid: false,
       formModel: {
-        username: null,
-        password: null,
+        mobile: null,
+        password: null
       },
       formRule: {
-        username: [
+        mobile: [
           (v) =>
-            !!v || this.$vuetify.lang.t('$vuetify.rule.required', ['username']),
+            !!v ||
+            this.$vuetify.lang.t('$vuetify.rule.required', [
+              this.$vuetify.lang.t('$vuetify.mobile')
+            ])
         ],
         password: [
           (v) =>
-            !!v || this.$vuetify.lang.t('$vuetify.rule.required', ['password']),
-        ],
+            !!v ||
+            this.$vuetify.lang.t('$vuetify.rule.required', [
+              this.$vuetify.lang.t('$vuetify.password')
+            ])
+        ]
       },
       socialIcons: [
         {
           text: 'Google',
-          icon: 'mdi-google',
+          icon: 'mdi-google'
         },
         {
           text: 'Facebook',
-          icon: 'mdi-facebook',
+          icon: 'mdi-facebook'
         },
         {
           text: 'Twitter',
-          icon: 'mdi-twitter',
-        },
-      ],
+          icon: 'mdi-twitter'
+        }
+      ]
     }
   },
   computed: {
     prefix() {
       return ''
-    },
+    }
   },
   methods: {
     login() {
@@ -137,8 +146,8 @@ export default {
           })
       }
     },
-    handleSocialLogin() {},
-  },
+    handleSocialLogin() {}
+  }
 }
 </script>
 
