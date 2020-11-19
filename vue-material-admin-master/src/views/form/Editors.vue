@@ -29,17 +29,17 @@ import 'quill/dist/quill.bubble.css'
 import { quillEditor } from 'vue-quill-editor'
 export default {
   components: {
-    quillEditor
+    quillEditor,
   },
   data() {
     return {
       content: 'Compose Epic Story...',
-      editorOption: {}
+      editorOption: {},
     }
   },
   computed: {},
 
-  methods: {}
+  methods: {},
 }
 </script>
 <style lang="sass" scoped>

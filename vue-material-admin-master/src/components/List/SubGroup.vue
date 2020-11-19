@@ -6,16 +6,16 @@
 import ListGroup from './Group'
 export default {
   components: {
-    ListGroup
+    ListGroup,
   },
   props: {
     item: {
       type: Object,
       default: () => ({
         text: '',
-        icon: false
-      })
-    }
-  }
+        icon: false,
+      }),
+    },
+  },
 }
 </script>

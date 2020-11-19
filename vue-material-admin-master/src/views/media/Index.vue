@@ -46,23 +46,23 @@
 import MediaMenu from '@/components/media/MediaMenu'
 export default {
   components: {
-    MediaMenu
+    MediaMenu,
   },
   data() {
     return {
       showDialog: false,
       viewMode: 'grid',
-      dirs: []
+      dirs: [],
     }
   },
   computed: {},
   methods: {
     handleCompose() {
       this.showDialog = true
-    }
+    },
   },
 
-  created() {}
+  created() {},
 }
 </script>
 

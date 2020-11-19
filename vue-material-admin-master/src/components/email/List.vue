@@ -88,13 +88,13 @@ import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 import { getMailByType } from '@/api/mail'
 export default {
   components: {
-    VuePerfectScrollbar
+    VuePerfectScrollbar,
   },
   props: {
     mailType: {
       type: String,
-      default: 'All'
-    }
+      default: 'All',
+    },
   },
   data: () => ({
     selected: [2],
@@ -102,30 +102,30 @@ export default {
       {
         href: '#',
         title: 'Delete',
-        click: (e) => {
+        click: e => {
           console.log(e)
-        }
+        },
       },
       {
         href: 'Mark as read',
         title: 'Mark as read',
-        click: (e) => {
+        click: e => {
           console.log(e)
-        }
+        },
       },
       {
         href: 'Spam',
         title: 'Spam',
-        click: (e) => {
+        click: e => {
           console.log(e)
-        }
-      }
-    ]
+        },
+      },
+    ],
   }),
   computed: {
     mails() {
       return getMailByType(this.$route.params.mailType)
-    }
+    },
   },
 
   created() {
@@ -149,7 +149,7 @@ export default {
       } else {
         this.selected.push(index)
       }
-    }
-  }
+    },
+  },
 }
 </script>

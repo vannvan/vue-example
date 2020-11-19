@@ -11,15 +11,14 @@ import axios from 'axios'
 import { Model } from 'vue-api-query'
 Model.$http = axios
 import '@mdi/font/css/materialdesignicons.css'
-import './styles/rewrite.scss'
 
 Vue.config.productionTip = false
 
 const app = new Vue({
-    router,
-    store,
-    vuetify,
-    render: (h) => h(App)
+  router,
+  store,
+  vuetify,
+  render: (h) => h(App)
 })
 
 app.$mount('#app')

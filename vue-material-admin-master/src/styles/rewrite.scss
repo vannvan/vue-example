@@ -1,14 +1,34 @@
+//侧栏菜单样式
 .v-navigation-drawer__content {
-    // overflow-y: hidden !important;
-    scrollbar-width: none;
+    overflow-y: hidden !important;
 
     .app-drawer__inner {
-        overflow: hidden;
-    }
+        height: calc(100% - 60px);
+        overflow-y: hidden;
 
-    /* Firefox */
+        &:hover {
+            overflow-y: auto;
+        }
+
+        .v-list {
+            width: 224px
+        }
+    }
 }
 
-.v-navigation-drawer__content::-webkit-scrollbar {
-    display: none
+.app-drawer__inner::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #ededed
+}
+
+.app-drawer__inner::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #fff
+}
+
+.app-drawer__inner::-webkit-scrollbar {
+    width: 6px;
+    height: 4px
 }

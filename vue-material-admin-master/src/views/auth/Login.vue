@@ -81,8 +81,6 @@
 </template>
 
 <script>
-import jsencrypt from '@/assets/libs/jsencrypt'
-import { objectToQueryString } from '@/util/index'
 export default {
   name: 'PageLogin',
   data() {
@@ -91,71 +89,61 @@ export default {
       formValid: false,
       formModel: {
         username: null,
-        password: null
+        password: null,
       },
       formRule: {
         username: [
           (v) =>
-            !!v || this.$vuetify.lang.t('$vuetify.rule.required', ['username'])
+            !!v || this.$vuetify.lang.t('$vuetify.rule.required', ['username']),
         ],
         password: [
           (v) =>
-            !!v || this.$vuetify.lang.t('$vuetify.rule.required', ['password'])
-        ]
+            !!v || this.$vuetify.lang.t('$vuetify.rule.required', ['password']),
+        ],
       },
       socialIcons: [
         {
           text: 'Google',
-          icon: 'mdi-google'
+          icon: 'mdi-google',
         },
         {
           text: 'Facebook',
-          icon: 'mdi-facebook'
+          icon: 'mdi-facebook',
         },
         {
           text: 'Twitter',
-          icon: 'mdi-twitter'
-        }
-      ]
+          icon: 'mdi-twitter',
+        },
+      ],
     }
   },
   computed: {
     prefix() {
       return ''
-    }
+    },
   },
   methods: {
     login() {
       if (this.$refs.form.validate()) {
         this.loading = true
-        let params = {
-          account: this.formModel.username,
-          type: 0,
-          password: this.formModel.password
-        }
-        let str = objectToQueryString(params)
-        let formData = new FormData()
-        formData.append('pa', jsencrypt.getKeyByStr(str))
-        console.log(jsencrypt.getKeyByStr(params))
         this.$store
-          .dispatch('login', formData)
+          .dispatch('login', this.formModel)
           .then(() => {
             this.loading = false
-            // this.$router.push('/dashboard')
+            this.$router.push('/dashboard')
           })
           .catch(() => {
             this.loading = false
           })
       }
     },
-    handleSocialLogin() {}
-  }
+    handleSocialLogin() {},
+  },
 }
 </script>
 
-<style lang="scss" scoped>
-.page-login__card {
-  max-width: 600px;
-  margin: 0 auto;
-}
+<style lang="sass" scoped>
+.page-login__card
+    max-width: 600px
+    margin: 0 auto
 </style>

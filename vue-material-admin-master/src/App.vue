@@ -49,7 +49,7 @@
 import ThemeSettings from '@/components/ThemeSettings'
 export default {
   components: {
-    ThemeSettings
+    ThemeSettings,
   },
   data() {
     return {
@@ -57,19 +57,19 @@ export default {
       snackbar: {
         show: false,
         text: '',
-        color: ''
-      }
+        color: '',
+      },
     }
   },
   methods: {
     openThemeSettings() {
       this.$vuetify.goTo(0)
       this.rightDrawer = !this.rightDrawer
-    }
+    },
   },
   mounted() {
-    if (typeof window !== undefined && window._VV === undefined) {
-      window._VV = this
+    if (typeof window !== undefined && window._VMA === undefined) {
+      window._VMA = this
     }
   },
   created() {
@@ -77,38 +77,30 @@ export default {
       this.snackbar = {
         show: true,
         text: e.text,
-        color: e.color
+        color: e.color,
       }
     })
     this.$on('AUTH_FAIELD', (e) => {
       this.snackbar = {
         show: true,
         text: 'Auth Failed',
-        color: 'error'
+        color: 'error',
       }
       this.$router.push({
         path: '/auth/login',
         query: {
-          redirect: this.$route.path
-        }
+          redirect: this.$route.path,
+        },
       })
     })
     this.$on('SERVER_ERROR', () => {
       this.snackbar = {
         show: true,
         text: 'Server Error',
-        color: 'error'
+        color: 'error',
       }
     })
-    this.$on('API_FAILED', (info) => {
-      console.log(info, 'aaa')
-      this.snackbar = {
-        show: true,
-        text: info.msg,
-        color: 'error'
-      }
-    })
-  }
+  },
 }
 </script>
 

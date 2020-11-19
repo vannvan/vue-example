@@ -8,7 +8,7 @@
       :to="item.to"
       v-bind="{
         target: item.href ? '_blank' : undefined,
-        rel: item.href ? 'noopener' : undefined
+        rel: item.href ? 'noopener' : undefined,
       }"
     >
       <v-list-item-icon v-if="item[itemIcon]">
@@ -31,24 +31,24 @@ export default {
   props: {
     items: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     itemIcon: {
       type: String,
-      default: 'icon'
+      default: 'icon',
     },
     itemSubTitle: {
       type: String,
-      default: 'subTitle'
+      default: 'subTitle',
     },
     itemText: {
       type: String,
-      default: 'text'
+      default: 'text',
     },
     itemValue: {
       type: String,
-      default: 'value'
-    }
-  }
+      default: 'value',
+    },
+  },
 }
 </script>

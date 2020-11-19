@@ -70,7 +70,7 @@ import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 import { getMailById } from '@/api/mail'
 export default {
   components: {
-    VuePerfectScrollbar
+    VuePerfectScrollbar,
   },
   data: () => ({
     selected: [2],
@@ -78,30 +78,30 @@ export default {
       {
         href: '#',
         title: 'Delete',
-        click: (e) => {
+        click: e => {
           console.log(e)
-        }
+        },
       },
       {
         href: 'Mark as read',
         title: 'Mark as read',
-        click: (e) => {
+        click: e => {
           console.log(e)
-        }
+        },
       },
       {
         href: 'Spam',
         title: 'Spam',
-        click: (e) => {
+        click: e => {
           console.log(e)
-        }
-      }
-    ]
+        },
+      },
+    ],
   }),
   computed: {
     mail() {
       return getMailById(this.$route.params.uuid)
-    }
+    },
   },
 
   created() {
@@ -113,7 +113,7 @@ export default {
     },
     formatDate(s) {
       return new Date(s).toLocaleDateString()
-    }
-  }
+    },
+  },
 }
 </script>

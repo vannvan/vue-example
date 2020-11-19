@@ -61,7 +61,7 @@ export default {
     author: { type: String },
     title: { type: String },
     desc: { type: String },
-    createdAt: { type: String }
+    createdAt: { type: String },
   },
 
   methods: {
@@ -73,8 +73,8 @@ export default {
     },
     handleFavorite() {
       // implement your own method here
-    }
-  }
+    },
+  },
 }
 </script>
 

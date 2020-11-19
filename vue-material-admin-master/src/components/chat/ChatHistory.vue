@@ -50,11 +50,11 @@ import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 export default {
   components: {
     VuePerfectScrollbar,
-    VCircle
+    VCircle,
   },
 
   data: () => ({
-    chats: Groups
+    chats: Groups,
   }),
 
   methods: {
@@ -81,7 +81,7 @@ export default {
     chatStatusColor(item) {
       console.log(item)
       return Util.randomElement(['blue', 'indigo', 'success', 'error', 'pink'])
-    }
-  }
+    },
+  },
 }
 </script>

@@ -55,7 +55,7 @@
 <script>
 export default {
   props: {
-    items: { type: [Array, Object] }
+    items: { type: [Array, Object] },
   },
 
   methods: {
@@ -67,8 +67,8 @@ export default {
     },
     handleFavorite() {
       // implement your own method here
-    }
-  }
+    },
+  },
 }
 </script>
 

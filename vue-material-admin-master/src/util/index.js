@@ -1,7 +1,7 @@
 import { format } from 'date-fns'
 
 const formatDate = (d, dateFormat = 'MM/dd/yyyy') => {
-    return format(d, dateFormat)
+  return format(d, dateFormat)
 }
 
 // export function camel (str) {
@@ -49,48 +49,43 @@ const formatDate = (d, dateFormat = 'MM/dd/yyyy') => {
 //   return text;
 // }
 const randomElement = (arr = []) => {
-    return arr[Math.floor(Math.random() * arr.length)]
+  return arr[Math.floor(Math.random() * arr.length)]
 }
 
 const kebab = (str) => {
-    return (str || '').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+  return (str || '').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
 }
 
 const toggleFullScreen = () => {
-    let doc = window.document
-    let docEl = doc.documentElement
+  let doc = window.document
+  let docEl = doc.documentElement
 
-    let requestFullScreen =
-        docEl.requestFullscreen ||
-        docEl.mozRequestFullScreen ||
-        docEl.webkitRequestFullScreen ||
-        docEl.msRequestFullscreen
-    let cancelFullScreen =
-        doc.exitFullscreen ||
-        doc.mozCancelFullScreen ||
-        doc.webkitExitFullscreen ||
-        doc.msExitFullscreen
+  let requestFullScreen =
+    docEl.requestFullscreen ||
+    docEl.mozRequestFullScreen ||
+    docEl.webkitRequestFullScreen ||
+    docEl.msRequestFullscreen
+  let cancelFullScreen =
+    doc.exitFullscreen ||
+    doc.mozCancelFullScreen ||
+    doc.webkitExitFullscreen ||
+    doc.msExitFullscreen
 
-    if (
-        !doc.fullscreenElement &&
-        !doc.mozFullScreenElement &&
-        !doc.webkitFullscreenElement &&
-        !doc.msFullscreenElement
-    ) {
-        requestFullScreen.call(docEl)
-    } else {
-        cancelFullScreen.call(doc)
-    }
+  if (
+    !doc.fullscreenElement &&
+    !doc.mozFullScreenElement &&
+    !doc.webkitFullscreenElement &&
+    !doc.msFullscreenElement
+  ) {
+    requestFullScreen.call(docEl)
+  } else {
+    cancelFullScreen.call(doc)
+  }
 }
 
-export const objectToQueryString = (obj) =>
-    Object.keys(obj)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(obj[key])}`)
-    .join("&");
-
 export default {
-    randomElement,
-    toggleFullScreen,
-    formatDate,
-    kebab,
+  randomElement,
+  toggleFullScreen,
+  formatDate,
+  kebab
 }

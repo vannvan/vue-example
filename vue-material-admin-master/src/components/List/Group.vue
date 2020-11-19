@@ -35,7 +35,7 @@ import kebabCase from 'lodash/kebabCase'
 import ListItem from './Item'
 export default {
   components: {
-    ListItem
+    ListItem,
   },
   inheritAttrs: false,
   props: {
@@ -44,19 +44,19 @@ export default {
       default: () => ({
         text: '',
         group: '',
-        children: []
-      })
+        children: [],
+      }),
     },
     subGroup: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     children() {
-      return this.item.children.map((item) => ({
+      return this.item.children.map(item => ({
         ...item,
-        to: item.to
+        to: item.to,
       }))
     },
     group() {
@@ -64,15 +64,15 @@ export default {
     },
     active() {
       const found = this.item.children.filter(
-        (item) => item.to === this.$route.path
+        item => item.to === this.$route.path
       )
       return found.length > 0 ? true : false
-    }
+    },
   },
   methods: {
     genGroup(children) {
       return children
-        .map((item) => {
+        .map(item => {
           const parent = item.group || this.item.group
           let group = `${parent}/${kebabCase(item.to)}`
           if (item.children) {
@@ -81,7 +81,7 @@ export default {
           return group
         })
         .join('|')
-    }
-  }
+    },
+  },
 }
 </script>

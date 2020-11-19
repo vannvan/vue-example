@@ -74,8 +74,8 @@ export default {
       notifications: false,
       sound: false,
       video: false,
-      invites: false
+      invites: false,
     }
-  }
+  },
 }
 </script>
