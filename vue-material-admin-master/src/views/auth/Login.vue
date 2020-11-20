@@ -27,7 +27,7 @@
               <v-icon>mdi-lock</v-icon>
             </v-tab>
             <v-tab href="#tab-2">
-              Mobile Valid Code
+              Mobile
               <v-icon>mdi-phone</v-icon>
             </v-tab>
             <v-tabs-items v-model="tab">
