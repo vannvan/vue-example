@@ -8,6 +8,7 @@ export default {
     username: '用户名',
     mobile: "手机号码",
     password: '密码',
+    code: '验证码',
     //app drawer
     sponsor: '赞助商',
     // menu

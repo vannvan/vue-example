@@ -8,6 +8,7 @@ export default {
     mobile: "Mobile",
     username: 'Username',
     password: 'Password',
+    code: 'Vali code',
     login_account: 'Login accoount',
     //app drawer
     sponsor: 'Sponsor',

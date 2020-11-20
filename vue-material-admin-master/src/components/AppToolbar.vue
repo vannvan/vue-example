@@ -131,6 +131,7 @@ export default {
     },
     availableLanguages() {
       const { locales } = this.$vuetify.lang
+      //   console.log(this.$vuetify)
       return Object.keys(locales).map((lang) => {
         return {
           text: locales[lang].label,
@@ -170,7 +171,7 @@ export default {
     },
     handleLogut() {
       if (window.confirm('Are you sure to logout?')) {
-        this.$store.dispatch('logout')
+        // this.$store.dispatch('logout')
         window._VMA.$emit('SHOW_SNACKBAR', {
           text: 'Logout successfull',
           color: 'success'
