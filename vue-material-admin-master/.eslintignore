@@ -1,5 +1,5 @@
 /build/
 /config/
-/dist/
+/node_modules/
 /*.js
 /test/unit/coverage/
